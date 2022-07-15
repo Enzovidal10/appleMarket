@@ -1,0 +1,115 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+}
+
+.inicio{
+    position: fixed;
+    width: 100%;
+}
+.msj-anuncio{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    background-color: rgb(15, 15, 15);
+}
+
+.msj-anuncio p{
+    font-size:15px;
+    /* text-transform: uppercase; */
+    font-family:'Courier New', Courier, monospace;
+}
+
+/*Barra de Navegación*/
+.logo{
+    width: 30px;
+    padding: 6px;
+    margin-left: 5px;
+    margin-right:425px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    border-bottom: 2px solid black;
+}
+
+.nav-menu{
+    display: flex;
+    flex-direction: row;
+    list-style: none;  
+}
+
+.nav-menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: black;  
+}
+.nav-menu a :hover{
+    color: white;
+    background-color: black;
+    transition:0.4s;
+}
+.nav-menu li{
+    padding:17px 10px;
+}
+
+/*Buscador*/
+.search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input{
+    color: #191919;
+    padding: 8px 8px 8px 35px;
+    width: 400px;
+    margin-top: 100px;
+    font-size: 15px;
+    border: solid black 2px;
+}
+
+#input-icon{
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 340px;
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/*Anuncio*/
+.img-a{
+    width: 98%;
+    padding: 1%;
+    margin-top: 20px;
+}
+/*Galería imagenes*/
+.grid-img{
+    display: grid;
+    grid-template-columns:repeat(3, 350px);
+    grid-template-rows:repeat(2,350px);
+
+    padding:20px ;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid-img img{
+    width: 290px;
+    padding: 20px;
+}
+
+.grid-img img:hover{
+    box-shadow: black 2px 2px 30px;
+    transition: 0.6s;
+}

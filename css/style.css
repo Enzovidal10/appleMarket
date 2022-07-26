@@ -8,58 +8,60 @@ body{
     background-color: white;
 }
 
-.inicio{
-    position: fixed;
-    width: 100%;
-}
-.msj-anuncio{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    color: white;
-    background-color: rgb(15, 15, 15);
-}
-
-.msj-anuncio p{
-    font-size:15px;
-    /* text-transform: uppercase; */
-    font-family:'Courier New', Courier, monospace;
-}
-
 /*Barra de Navegación*/
 .logo{
-    width: 30px;
-    padding: 6px;
+    width: 60px;
+    height: 60px;
     margin-left: 5px;
-    margin-right:425px;
+    margin-right:401px;
 }
 
-nav{
+/*Titulo*/
+.title{
     display: flex;
     flex-direction: row;
-    background-color:white;
-    border-bottom: 2px solid black;
+    justify-content: center;
+}
+.title img{
+    width: 70px;
+    margin-top: 90px;
+}
+h1{
+    margin-top: 120px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.nav-menu{
+/*NavBar*/
+nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color:black;
+}
+
+.nav-ul{
     display: flex;
     flex-direction: row;
     list-style: none;  
 }
 
-.nav-menu a{
+.nav-ul a{
     text-decoration: none;
     text-transform: uppercase;
     font-size: 15px;
-    color: black;  
+    color: white;  
 }
-.nav-menu a :hover{
-    color: white;
-    background-color: black;
+.nav-ul a :hover{
+    color: black;
+    background-color: white;
     transition:0.4s;
 }
-.nav-menu li{
-    padding:17px 10px;
+.nav-ul li{
+    padding:21px 10px;
 }
 
 /*Buscador*/
@@ -73,30 +75,29 @@ nav{
     color: #191919;
     padding: 8px 8px 8px 35px;
     width: 400px;
-    margin-top: 100px;
+    margin-top: 70px;
     font-size: 15px;
     border: solid black 2px;
 }
 
 #input-icon{
     position: absolute;
-    margin-top: 110px;
-    margin-left: 340px;
+    margin-top: 80px;
+    margin-left: 350px;
     font-size: 18px;
     opacity: 0.85;
 }
 
 /*Anuncio*/
 .img-a{
-    width: 98%;
-    padding: 1%;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 60px;
 }
 /*Galería imagenes*/
-.grid-img{
+.grid-card{
     display: grid;
-    grid-template-columns:repeat(3, 350px);
-    grid-template-rows:repeat(2,350px);
+    grid-template-columns:repeat(3, 400px);
+    grid-template-rows:repeat(2,500px);
 
     padding:20px ;
     justify-content: center;
@@ -104,12 +105,52 @@ nav{
     justify-items: center;
 }
 
-.grid-img img{
+
+/*Card*/
+.card-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.card-img img{
     width: 290px;
     padding: 20px;
 }
 
-.grid-img img:hover{
+.card:hover{
     box-shadow: black 2px 2px 30px;
-    transition: 0.6s;
+    transition: 0.5s;
+    padding: 15px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+}
+
+.card span{
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.card .desc{
+    width: 70px;
+    margin-left: 250px;
+    font-size: 15px;
+    padding: 5px;
+    color:white ;
+    background-color: black;
+    border-radius: 4px;
+}
+
+.card .price{
+    border-radius: 4px;
+    border: solid black 1px;
+    color: black;
+    width: 110px;
+    margin-top: 20px;
+    margin-left: 110px;
+    padding: 5px;
+    font-size: 23px;
 }

@@ -28,26 +28,28 @@ let productos=[
 
 function Cards(productos){
     let container= document.querySelector('.grid-card');
-    productos.forEach(producto => {
+    productos.forEach(item => {
         container.innerHTML +=
         `
         <div class="card">
-        <div class="card-img">
-            <img src="https://www.iplace.com.uy/ccstore/v1/images/?source=/file/v2658799190959115494/products/100002199.00-apple-iphone-se-2022-64gb-productred-mmxh3lz-a.jpg" alt="" srcset="">
+            <div class="card-img">
+                <img src="https://www.iplace.com.uy/ccstore/v1/images/?source=/file/v2658799190959115494/products/100002199.00-apple-iphone-se-2022-64gb-productred-mmxh3lz-a.jpg" alt="" srcset="">
+            </div>
+            <div class="body-card">
+                <ul>
+                    <li class="desc">-10% OFF</li>
+                    <li class="modelo">${item.Modelo}</li>
+                    <li>Cámara: ${item.Camara}</li>
+                    <li>Color: ${item.Color}</li>
+                    <li>Almacenamiento: ${item.Almacenamiento}</li>
+                    <li class="price">Precio: USD ${item.Precio}</li>
+                </ul>
+                <input class="btn" type="button" value="Comprar">
+            </div>
         </div>
-        <div class="body-card">
-            <ul>
-                <li class="desc">-10% OFF</li>
-                <li class="modelo">${productos.Modelo}</li>
-                <li>Cámara:${productos.Camara}</li>
-                <li>${productos.Color}</li>
-                <li>${productos.Almacenamiento}</li>
-                <li class="price">${productos.Precio}</li>
-            </ul>
-            <input class="btn" type="button" value="Comprar">
-        </div>
-    </div>
     `
     });  
     
 }
+
+Cards(productos);

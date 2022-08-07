@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Carter+One&family=Permanent+Marker&display=swap');
 
 *{
     margin: 0;
     padding: 0;
+    font-family:'ABeeZee', sans-serif;
 }
 
 body{
@@ -36,11 +38,11 @@ body{
     margin-top: 90px;
 }
 h1{
-    margin-top: 80px;
+    margin-top: 110px;
     margin-left: 30px;
     margin-right: 30px;
     font-size: 60px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Carter One', cursive;
 }
 
 /*NavBar*/
@@ -155,8 +157,9 @@ h1{
 }
 
 .body-card .desc{
-    width: 70px;
-    margin-left: 250px;
+    width: 80px;
+    margin-left: 240px;
+    margin-bottom: 15px;
     font-size: 15px;
     padding: 5px;
     color:white ;
@@ -171,19 +174,20 @@ h1{
 
 .body-card li{
     font-size: 17px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'ABeeZee', sans-serif;
 }
 
 .body-card .modelo{
    text-align: center;
    text-transform: uppercase; 
-   margin-bottom: 20px;   
+   margin-bottom: 20px;
+   font-weight: bold;
 }
 
 .body-card .price{
     width: max-content;
     border-radius: 2px;
-    border: solid #191919 1px;
+    border: solid black 1px;
     color: black;
     margin: 30px 0px;
     padding: 3px 10px;

@@ -50,7 +50,7 @@ let productos=[
 
 //Función para crear CARDS automáticas
 
-function Cards(productos){
+function cards(productos){
     let container= document.querySelector('.grid-card');
     productos.forEach(item => {
         container.innerHTML +=
@@ -76,4 +76,20 @@ function Cards(productos){
     
 }
 
-Cards(productos);
+cards(productos);
+
+
+document.addEventListener('keyup', e=>{
+   
+if (e.target.matches('#buscador')){
+
+    document.querySelectorAll('.card').forEach(card=>{
+
+        card.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+
+        ?card.classList.remove("filtro")
+        :card.classList.add("filtro")
+})
+}
+
+})

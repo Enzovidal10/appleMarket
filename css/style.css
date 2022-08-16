@@ -27,24 +27,6 @@ body{
     width: 30px;
     height:30px;
 }
-/*Titulo*/
-.title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.title img{
-    width: 70px;
-    margin-top: 90px;
-}
-h1{
-    margin-top: 110px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 60px;
-    font-family: 'Carter One', cursive;
-}
-
 /*NavBar*/
 .navbar{
     position: fixed;
@@ -81,7 +63,48 @@ h1{
     transition:0.4s;
 }
 
+/*Titulo*/
+.title{
+    background-image: url("../img/descarga.jpg");
+    background-size:cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    border-bottom: #191919 solid 2px;
+}
 
+.title img{
+    width: 70px;
+    margin-top: 90px;
+}
+
+h1{
+    margin: 0 30px;
+    margin-right: 160px;
+    margin-top: 110px;
+    font-size: 60px;
+    font-family:'ABeeZee', sans-serif;
+}
+
+.subt-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra{
+    border: solid black 1px;
+    width: 300px;
+}
+
+.subt{
+    text-align: center;
+    font-family:'ABeeZee', sans-serif;
+    margin-top: 80px;
+    font-size: 40px;
+}
 /*Buscador*/
 .search{
     display: flex;
@@ -93,7 +116,7 @@ h1{
     color: #191919;
     padding: 8px 8px 8px 35px;
     width: 400px;
-    margin-top: 70px;
+    margin-top: 30px;
     font-size: 15px;
     border: solid black 2px;
 }
@@ -101,40 +124,38 @@ h1{
 #input-icon{
     position: absolute;
     margin-left: 330px;
-    margin-top: 80px;
+    margin-top: 40px;
     font-size: 18px;
 }
 
-/*Anuncio*/
+/*Seccion Anuncio*/
 .img-a{
     width: 100%;
 }
 
-.img-b{
-    width: 100%;
-}
 /*Galería imagenes*/
 .grid-card{
     display: grid;
     grid-template-columns:repeat(3, 400px);
-    grid-template-rows:repeat(2,600px);
+    grid-template-rows:repeat(2,550px);
 
     padding:20px ;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
     justify-items: center;
 }
 
 
-/*Card*/
+/*Sección de Cards*/
 .card-img{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 .card-img img{
-    width: 190px;
-    padding: 20px;
+    width: 150px;
+    padding: 15px;
 }
 
 .card:hover{
@@ -145,8 +166,8 @@ h1{
 .card{
     display: flex;
     flex-direction: column;
-    height: 520px;
-    padding:15px;
+    height:max-content;
+    padding:20px 15px;
     border: solid #191919 2px;
 }
 
@@ -154,14 +175,15 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 330px;
 }
 
 .body-card .desc{
-    width: 80px;
+    width:max-content;
     margin-left: 240px;
     margin-bottom: 15px;
     font-size: 15px;
-    padding: 5px;
+    padding: 5px 10px;
     color:white ;
     background-color: black;
     border-radius: 4px;
@@ -196,7 +218,7 @@ h1{
     margin-left: 80px;
 }
 
-.btn{
+.btnComprar{
     padding: 3px 15px;
     background-color: black;
     color: white;
@@ -204,7 +226,7 @@ h1{
     font-size: 16px;
 }
 
-.btn:hover{
+.btnComprar:hover{
     border: black solid 2px;
     background-color: white;
     color:black;
@@ -213,5 +235,13 @@ h1{
 
 /* Filtrar elemento */
 .filtro{
+    display: none;
+}
+
+/*Quitar X en Input Search*/
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
     display: none;
 }

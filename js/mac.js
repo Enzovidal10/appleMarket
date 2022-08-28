@@ -1,6 +1,6 @@
 //Función de CARDS para Mac
 
-let mac=[
+let productos=[
     //Mackbook
      {"img":"https://www.iplace.com.uy/ccstore/v1/images/?source=/file/v1982982853025931664/products/100000014.00-imac-apple-21-intelcore-i5-nucleo-mhk03cl-a.jpg",
      "Modelo":"MACBOOK PRO",
@@ -61,9 +61,9 @@ let mac=[
 
 //Función para crear CARDS automáticas
 
-function cards(mac){
+function cards(productos){
     let container= document.querySelector('.grid-card');
-    mac.forEach(item => {
+    productos.forEach(item => {
         container.innerHTML +=
         `
         <div class="card">
@@ -80,7 +80,7 @@ function cards(mac){
                     <li><b>Almacenamiento:</b> ${item.DiscoDuro}</li>
                     <li class="price"><b>Precio:</b> USD ${item.Precio}</li>
                 </ul>
-                <input class="btn" type="button" value="Comprar">
+                <input class="btnComprar" type="button" value="Comprar">
             </div>
         </div>
     `
@@ -88,7 +88,7 @@ function cards(mac){
     
 }
 
-cards(mac);
+cards(productos);
 
 //Barra de Búsqueda (SEARCH)
 
@@ -106,3 +106,20 @@ document.addEventListener('keyup', e=>{
     }
     
     })
+
+    //Sweet Alert
+    const botones=document.querySelectorAll(".btnComprar")
+
+    //Recorremos cada boton del array botones(ya que hay muchos con la misma clase)
+    for(boton of botones){
+        boton.onclick= (e)=>{
+            //Agregamos la sweet alert para que con el click se ejecute.
+            swal({
+                text:"Has agregado un producto al carrito",
+                icon: "success",
+                button: "OK",
+              }); 
+            
+        }
+       
+    }

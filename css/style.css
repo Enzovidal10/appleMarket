@@ -16,7 +16,6 @@ body{
     width: 60px;
     height: 60px;
     margin-left: 5px;
-    margin-right:401px;
 }
 
 .bag-icon{
@@ -39,7 +38,7 @@ body{
 .navbar-lista{
     display: flex;
     flex-direction: row;
-    margin-left: 30%;
+    margin-left: 31%;
     list-style: none;  
 }
 
@@ -244,4 +243,40 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
     display: none;
+}
+
+/*Carrito*/
+
+.productos{
+    width: 500px;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.producto{
+    display: flex;
+    flex-direction: row;
+    border: black solid 1px;
+    margin: 8px;
+    margin-top: 80px;
+}
+.img{
+    width: 100px;
+}
+#img-carrito{
+    width: 70px;
+    margin: 20px;
+    margin-bottom: 20px;
+}
+.texto-c{
+    padding: 10px;
+    width: 400px;
+    margin-left: 25px;
+    color: black;
+}
+
+.title-carrito{
+    list-style: none;
+    margin-bottom: 10px;
+    font-weight: bold; 
 }

@@ -248,6 +248,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .fondo-c{
     background-image: url("../img/descarga.jpg");
     background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }

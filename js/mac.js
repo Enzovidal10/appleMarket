@@ -141,6 +141,12 @@ document.addEventListener('keyup', e=>{
         carrito.push(listaCarrito)
         //console.log(carrito)
 
+        //Agregar numero al iconoCarrito
+        let cantProductos=carrito.length
+        let spanIcono=document.getElementById("numCarrito")
+        
+        spanIcono.innerText=cantProductos
+        
         //Pasamos a formato de texto plano para lectura del localStorage.
         let formatoJSON=localStorage.setItem('ProductosCarrito',JSON.stringify(carrito))
         console.log(formatoJSON)

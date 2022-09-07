@@ -129,9 +129,14 @@ for(boton of botones){
         carrito.push(listaCarrito)
         //console.log(carrito)
 
-        //Pasamos a formato de texto plano para lectura del localStorage.
+        //Agregar numero al iconoCarrito
+        let cantProductos=carrito.length
+        let spanIcono=document.getElementById("numCarrito")
+        spanIcono.innerText=cantProductos 
+
+        //Pasamos a formato de texto plano para lectura del localStorage.Con JSON.stringify se convierte en texto plano.
         let formatoJSON=localStorage.setItem('ProductosCarrito',JSON.stringify(carrito))
-        console.log(formatoJSON)
+        
         //Agregamos la sweet alert para que con el click se ejecute.
         swal({
             text:"Has agregado un producto al carrito",
@@ -140,4 +145,3 @@ for(boton of botones){
           }); 
     }
 }
-

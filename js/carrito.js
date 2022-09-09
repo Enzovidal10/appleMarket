@@ -17,8 +17,7 @@ function cards(enCarrito){
             <li><b>Almacenamiento:</b> ${item.Almacenamiento}</li>
             <li><b>Color:</b> ${item.Color}.</li>
             <li><b>Precio:</b> USD ${item.Precio}</li>
-        </ul>
-            <buttom class="btnBorrar"><a href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANhJREFUSEvVle0NwjAMRF83gU1gE5ikYhLYBDaBTUCHZGSZNuSjLap/RrJfzuc4HTNHN3N9FgfsgDOwqVT2AI7AzfKjgisgSEsIsh0DPFsqu9zPxaOCvwEkO/oydPbVmRwFZpr8MYiZKb/6gbZmt0iF9oDdVhCFQQW8twCUGyEqqjEcK66cbAV2OQ/RWap4NcA/IAG8J7FLRQr86/QmpyBFAJnsex49aTb5BFzCtBhEI3ponaKa7VHUonUBpljXGggNxjviLrLdUvsn/PxwavqdzFn8T55cwQvRlDoZpKPUFgAAAABJRU5ErkJggg=="/></a></buttom>      
+        </ul> 
     </div>
     ` 
     });
@@ -52,3 +51,4 @@ function agregarNumeroCarrito(){
 }
 
 agregarNumeroCarrito()
+

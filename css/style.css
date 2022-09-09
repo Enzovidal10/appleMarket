@@ -6,10 +6,6 @@
     font-family:'ABeeZee', sans-serif;
 }
 
-body{
-    background-color: white;
-}
-
 /*Barra de Navegación*/
 .logo{
     position: absolute;
@@ -169,6 +165,7 @@ h1{
     height:max-content;
     padding:20px 15px;
     border: solid #191919 2px;
+    background-color: white;
 }
 
 .body-card{
@@ -246,32 +243,30 @@ input[type="search"]::-webkit-search-results-decoration {
 /*Carrito*/
 
 .fondo-c{
-    background-image: url("../img/descarga.jpg");
+    background-image: url("../img/2.jpg");
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 .productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 70px;
-    margin-left: 670px;
     padding-top: 20px;
-    width: 52%;
     height: max-content;
     overflow-y: scroll;
-    border-bottom: 2px solid black;
 }
 ::-webkit-scrollbar {
     display: none;
 }
 .btnCFlex{
     display: flex;
-    justify-content: end;
-    margin-right: 270px;
+    justify-content: center;
 }
 #btnPagar{
     width: 100px;
-    right: 0;
     margin: 40px;
     padding: 3px;
     font-size: 15px;
@@ -295,6 +290,7 @@ input[type="search"]::-webkit-search-results-decoration {
     margin: 0 40px;
     margin-bottom: 30px;
     z-index: 999;
+    width: 50%;
 }
 
 .img{
@@ -318,13 +314,6 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 400px;
     margin-left: 25px;
     color: black;
-}
-.btnBorrar{
-    position: relative;
-    right: 0;
-    margin-bottom: 15px;
-    margin-left: 50px;
-    margin-top: 5px;
 }
 
 /*Icono del Carrito*/

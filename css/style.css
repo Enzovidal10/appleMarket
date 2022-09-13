@@ -331,3 +331,7 @@ input[type="search"]::-webkit-search-results-decoration {
     color: black;
     font-weight: bold;
 }
+
+.btnBorrar svg{
+   margin-left: 110px;
+}

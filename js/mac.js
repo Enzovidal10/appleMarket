@@ -38,7 +38,6 @@ let productos=[
         "botonid":"3"
     },
         
-     //Iphone 13
      {
         "img":"https://www.iplace.com.uy/ccstore/v1/images/?source=/file/v8315679397670854488/products/100001836.00-apple-macbook-pro-14-8cpu-14gpu-16gbram-512gb-gris-espacial-mkgp3ci-a.jpg",
         "Modelo":"MACBOOK MINI",

@@ -1,12 +1,28 @@
 
 //Covierto el array con JSON.parse el texto plano en un objeto nuevamente.
-let enCarrito=JSON.parse(localStorage.getItem('ProductosCarrito'))  
+//Array de productos Iphone
+let enCarrito=JSON.parse(sessionStorage.getItem('ProductosCarrito')) 
+//Array de productos Mac
+let enCarrito2=JSON.parse(sessionStorage.getItem('ProductosCarrito2'))
 
+//Array de ambos tipos de productos
+let carritos=[];
+
+enCarrito.forEach(item=>{
+    carritos.push(item)
+    
+})
+enCarrito2.forEach(item=>{
+    carritos.push(item)
+})
+
+let Carritos=sessionStorage.setItem('Carrito',JSON.stringify(carritos))
+Carritos=JSON.parse(sessionStorage.getItem('Carrito'))
 
 //Función para crear CARDS automáticas
-function cards(enCarrito){
+function cards(Carritos){
     let contenedor= document.querySelector('.productos');
-    enCarrito.forEach(item => {
+    Carritos.forEach(item => {
         contenedor.innerHTML +=
     `
     <div class="producto">
@@ -28,8 +44,10 @@ function cards(enCarrito){
 
 }
 //Llamo a la función
-cards(enCarrito)
+cards(Carritos)
 
+
+//Boton Pagar Función
 let btnpagar=document.getElementById("btnPagar")
 
 //Sweet Alert al pagar el producto
@@ -43,36 +61,46 @@ function PagarProducto(){
       }); 
 
       localStorage.clear()
-      setInterval("location.reload()",3000)
+      setInterval("location.reload()",2000)
 }
 
 //Funcion agregar numero al carrito
 function agregarNumeroCarrito(){
-    let cantProductos=enCarrito.length
+    //Suma de la cantidad de productos en ambos carritos
+    let cantProductos=Carritos.length;
     let iconoCarrito=document.getElementById("numCarrito")
-
+    //Imprimo el numero en el span carrito
     iconoCarrito.innerText=cantProductos
 }
-
+//Llamo a la función.
 agregarNumeroCarrito()
 
-let botones=document.querySelectorAll(".btnBorrar")
 
+//Filtrar en array y borrar
+let botones=document.querySelectorAll(".btnBorrar")
 botones.forEach(item=>{
     item.onclick=(e)=>{
         //obtengo el id del boton
         let id=item.id
         //filtro por el id que corresponda al boton clickeado con el id del producto en el array.
-        let filtrar=enCarrito.find(e=>e.botonid==id)
+        let filtrar=carritos.find(e=>e.botonid==id)
         //Encuentro posicion del producto en el array
-        let posRemover=enCarrito.indexOf(filtrar)
+        let posRemover=carritos.indexOf(filtrar)
+        console.log(posRemover)
         //Elimino el producto del array 
-        let removerItem=enCarrito.splice(posRemover,1)
+        let removerItem=carritos.splice(posRemover,1)
+
         //Subo al localStorage el array con el resto de productos no eliminados.
-        let nuevoCarrito=localStorage.setItem('ProductosCarrito',JSON.stringify(enCarrito))
-        //Actualizo la pagina
-        location.reload()
+        let nuevoCarrito=sessionStorage.setItem('Carrito',JSON.stringify(carritos))
+
+        Toastify({
+            text: "Producto eliminado",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+              color:"black",
+            }
+          }).showToast();
+        //setInterval("location.reload()",500)
     }
 })
-
-

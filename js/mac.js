@@ -11,7 +11,7 @@ let productos=[
         "Ram":"4GB",
         "Precio":1800,
         "desc":"10%",
-        "botonid":"1"
+        "botonid":"7"
     },
 
      {
@@ -23,7 +23,7 @@ let productos=[
         "Ram":"6GB",
         "Precio":1000,
         "desc":"12%",
-        "botonid":"2"
+        "botonid":"8"
     },
      
      {
@@ -35,7 +35,7 @@ let productos=[
         "Ram":"12GB",
         "Precio":1300,
         "desc":"20%",
-        "botonid":"3"
+        "botonid":"9"
     },
         
      {
@@ -47,7 +47,7 @@ let productos=[
         "Ram":"16GB",
         "Precio":1400,
         "desc":"25%",
-        "botonid":"4"
+        "botonid":"10"
     },
 
      {
@@ -59,7 +59,7 @@ let productos=[
         "Ram":"8GB",
         "Precio":1600,
         "desc":"8%",
-        "botonid":"5"
+        "botonid":"11"
     },
 
      
@@ -72,7 +72,7 @@ let productos=[
         "Ram":"32GB",
         "Precio":1700,
         "desc":"10%",
-        "botonid":"6"
+        "botonid":"12"
     }
 ];
 
@@ -147,15 +147,17 @@ document.addEventListener('keyup', e=>{
         spanIcono.innerText=cantProductos
         
         //Pasamos a formato de texto plano para lectura del localStorage.
-        let formatoJSON=localStorage.setItem('ProductosCarrito',JSON.stringify(carrito))
-        console.log(formatoJSON)
+        let formatoJSON=sessionStorage.setItem('ProductosCarrito2',JSON.stringify(carrito))
 
-            //Agregamos la sweet alert para que con el click se ejecute.
-            swal({
-                text:"Has agregado un producto al carrito",
-                icon: "success",
-                button: "OK",
-              }); 
+              //Agregamos toastify para que con el click se ejecute.
+              Toastify({
+                text: "Agregado al Carrito!",
+                className: "info",
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                  color:"black"
+                }
+              }).showToast();
             
         }
        

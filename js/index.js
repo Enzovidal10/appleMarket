@@ -135,13 +135,16 @@ for(boton of botones){
         spanIcono.innerText=cantProductos 
 
         //Pasamos a formato de texto plano para lectura del localStorage.Con JSON.stringify se convierte en texto plano.
-        let formatoJSON=localStorage.setItem('ProductosCarrito',JSON.stringify(carrito))
+        let formatoJSON=sessionStorage.setItem('ProductosCarrito',JSON.stringify(carrito))
         
-        //Agregamos la sweet alert para que con el click se ejecute.
-        swal({
-            text:"Has agregado un producto al carrito",
-            icon: "success",
-            button: "OK",
-          }); 
+        //Agregamos toastify para que con el click se ejecute.
+        Toastify({
+            text: "Agregado al Carrito!",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+              color:"black"
+            }
+          }).showToast();
     }
 }

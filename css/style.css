@@ -259,7 +259,10 @@ input[type="search"]::-webkit-search-results-decoration {
     overflow-y: scroll;
 }
 ::-webkit-scrollbar {
-    display: none;
+    background-color: #191919;
+}
+::-webkit-scrollbar-thumb{
+    background-color: aliceblue;
 }
 .btnCFlex{
     display: flex;
@@ -335,3 +338,17 @@ input[type="search"]::-webkit-search-results-decoration {
 .btnBorrar svg{
    margin-left: 110px;
 }
+
+.info{
+    margin-top: 50px;
+    border: #191919 solid 1px;
+}
+
+.div-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url("../img/2.jpg");
+    height: 100vh;
+}
+

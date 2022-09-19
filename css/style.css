@@ -339,16 +339,38 @@ input[type="search"]::-webkit-search-results-decoration {
    margin-left: 110px;
 }
 
-.info{
-    margin-top: 50px;
-    border: #191919 solid 1px;
-}
-
-.div-form{
+.div-table{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-image: url("../img/2.jpg");
-    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px;
 }
 
+.th{
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}
+
+#data tr td{
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    border: black solid 1px;
+}
+#data{
+    background-color: #00000049;
+    text-align: center;
+}
+h2{
+    margin-bottom: 30px;
+    border-bottom: white solid 2px;
+    padding: 0 20px;
+    padding-bottom: 8px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.body-api{
+    background-image: url("../img/2.jpg");
+}

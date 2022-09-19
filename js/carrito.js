@@ -5,24 +5,24 @@ let enCarrito=JSON.parse(sessionStorage.getItem('ProductosCarrito'))
 //Array de productos Mac
 let enCarrito2=JSON.parse(sessionStorage.getItem('ProductosCarrito2'))
 
+
 //Array de ambos tipos de productos
 let carritos=[];
-
 enCarrito.forEach(item=>{
     carritos.push(item)
     
 })
-enCarrito2.forEach(item=>{
-    carritos.push(item)
-})
 
-let Carritos=sessionStorage.setItem('Carrito',JSON.stringify(carritos))
-Carritos=JSON.parse(sessionStorage.getItem('Carrito'))
+// enCarrito2.forEach(item=>{
+//     carritos.push(item)
+// })
+
+
 
 //Función para crear CARDS automáticas
-function cards(Carritos){
+function cards(carritos){
     let contenedor= document.querySelector('.productos');
-    Carritos.forEach(item => {
+    carritos.forEach(item => {
         contenedor.innerHTML +=
     `
     <div class="producto">
@@ -44,7 +44,7 @@ function cards(Carritos){
 
 }
 //Llamo a la función
-cards(Carritos)
+cards(carritos)
 
 
 //Boton Pagar Función
@@ -60,14 +60,14 @@ function PagarProducto(){
         button: ":D",
       }); 
 
-      localStorage.clear()
+      sessionStorage.clear()
       setInterval("location.reload()",2000)
 }
 
 //Funcion agregar numero al carrito
 function agregarNumeroCarrito(){
     //Suma de la cantidad de productos en ambos carritos
-    let cantProductos=Carritos.length;
+    let cantProductos=carritos.length;
     let iconoCarrito=document.getElementById("numCarrito")
     //Imprimo el numero en el span carrito
     iconoCarrito.innerText=cantProductos
@@ -90,8 +90,6 @@ botones.forEach(item=>{
         //Elimino el producto del array 
         let removerItem=carritos.splice(posRemover,1)
 
-        //Subo al localStorage el array con el resto de productos no eliminados.
-        let nuevoCarrito=sessionStorage.setItem('Carrito',JSON.stringify(carritos))
 
         Toastify({
             text: "Producto eliminado",

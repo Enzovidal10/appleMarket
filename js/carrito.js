@@ -1,28 +1,13 @@
 
 //Covierto el array con JSON.parse el texto plano en un objeto nuevamente.
-//Array de productos Iphone
+//Array de productos Iphone + productos Mac
 let enCarrito=JSON.parse(sessionStorage.getItem('ProductosCarrito')) 
-//Array de productos Mac
-let enCarrito2=JSON.parse(sessionStorage.getItem('ProductosCarrito2'))
-
-
-//Array de ambos tipos de productos
-let carritos=[];
-enCarrito.forEach(item=>{
-    carritos.push(item)
-    
-})
-
-// enCarrito2.forEach(item=>{
-//     carritos.push(item)
-// })
-
-
+console.log(enCarrito)
 
 //Función para crear CARDS automáticas
-function cards(carritos){
+function cards(enCarrito){
     let contenedor= document.querySelector('.productos');
-    carritos.forEach(item => {
+    enCarrito.forEach(item => {
         contenedor.innerHTML +=
     `
     <div class="producto">
@@ -44,7 +29,7 @@ function cards(carritos){
 
 }
 //Llamo a la función
-cards(carritos)
+cards(enCarrito)
 
 
 //Boton Pagar Función
@@ -64,18 +49,6 @@ function PagarProducto(){
       setInterval("location.reload()",2000)
 }
 
-//Funcion agregar numero al carrito
-function agregarNumeroCarrito(){
-    //Suma de la cantidad de productos en ambos carritos
-    let cantProductos=carritos.length;
-    let iconoCarrito=document.getElementById("numCarrito")
-    //Imprimo el numero en el span carrito
-    iconoCarrito.innerText=cantProductos
-}
-//Llamo a la función.
-agregarNumeroCarrito()
-
-
 //Filtrar en array y borrar
 let botones=document.querySelectorAll(".btnBorrar")
 botones.forEach(item=>{
@@ -83,14 +56,14 @@ botones.forEach(item=>{
         //obtengo el id del boton
         let id=item.id
         //filtro por el id que corresponda al boton clickeado con el id del producto en el array.
-        let filtrar=carritos.find(e=>e.botonid==id)
+        let filtrar=enCarrito.find(e=>e.botonid==id)
         //Encuentro posicion del producto en el array
-        let posRemover=carritos.indexOf(filtrar)
-        console.log(posRemover)
+        let posRemover=enCarrito.indexOf(filtrar)
         //Elimino el producto del array 
-        let removerItem=carritos.splice(posRemover,1)
-
-
+        let removerItem=enCarrito.splice(posRemover,1)
+        //Actualizo la tienda
+        let actualizartienda=sessionStorage.setItem('ProductosCarrito', JSON.stringify(enCarrito))
+        
         Toastify({
             text: "Producto eliminado",
             className: "info",
@@ -99,6 +72,18 @@ botones.forEach(item=>{
               color:"black",
             }
           }).showToast();
-        //setInterval("location.reload()",500)
+        setInterval("location.reload()",500)
     }
 })
+
+//Funcion agregar numero al carrito
+function agregarNumeroCarrito(){
+    //Suma de la cantidad de productos en ambos carritos
+    let cantProductos=enCarrito.length;
+    let iconoCarrito=document.getElementById("numCarrito")
+    //Imprimo el numero en el span carrito
+    iconoCarrito.innerText=cantProductos
+}
+
+//Llamo a la función.
+agregarNumeroCarrito()
